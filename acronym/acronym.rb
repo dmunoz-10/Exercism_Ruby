@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Acronym class
 class Acronym
   def self.abbreviate(str)

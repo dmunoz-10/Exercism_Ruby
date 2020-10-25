@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Flatten class
 class FlattenArray
   def self.flatten(array)

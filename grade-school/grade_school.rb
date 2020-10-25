@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # School Class
 class School
   def initialize

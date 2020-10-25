@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Anagram Class
 class Anagram
   def initialize(word)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Squares Class
 class Squares
   def initialize(number)

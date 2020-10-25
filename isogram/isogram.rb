@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Isogram Class
 class Isogram
   def self.isogram?(letters)

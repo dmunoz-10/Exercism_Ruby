@@ -2,6 +2,7 @@
 class Complement
   def self.of_dna(dna)
     return '' if dna =~ /[^GCTA]/
+
     temp = []
     dna.each_char do |x|
       temp.push('C') if x.eql?('G')
@@ -11,8 +12,4 @@ class Complement
     end
     temp.join
   end
-end
-
-module BookKeeping
-  VERSION = 4
 end

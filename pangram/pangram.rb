@@ -4,7 +4,3 @@ class Pangram
     phrase.downcase.scan(/[a-z]/).uniq.size == 26
   end
 end
-
-module BookKeeping
-  VERSION = 6
-end

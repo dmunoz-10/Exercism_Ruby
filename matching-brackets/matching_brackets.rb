@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Brackets class
 class Brackets
   def self.paired?(string)

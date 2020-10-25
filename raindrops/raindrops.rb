@@ -5,11 +5,6 @@ class Raindrops
     sound << 'Pling' if (number % 3).zero?
     sound << 'Plang' if (number % 5).zero?
     sound << 'Plong' if (number % 7).zero?
-    sound = number.to_s if sound.empty?
-    sound
+    sound.empty? && number.to_s || sound
   end
-end
-
-module BookKeeping
-  VERSION = 3
 end

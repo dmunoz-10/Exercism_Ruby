@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Accumulate Class
 class Array
   def accumulate

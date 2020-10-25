@@ -18,6 +18,6 @@ class Scrabble
   end
 
   def score
-    @word.chars.sum { |letter| LETTER_SCORE[letter] }
+    @word.chars.sum(&LETTER_SCORE)
   end
 end

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Year Class
 class Year
   def self.leap?(num_year)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Hamming Class
 class Hamming
   def self.compute(dna, dna2)

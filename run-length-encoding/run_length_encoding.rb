@@ -8,7 +8,3 @@ class RunLengthEncoding
     str.scan(/(\d*)(.)/).map { |i, j| i.empty? ? j : j * i.to_i }.join
   end
 end
-
-module BookKeeping
-  VERSION = 3
-end

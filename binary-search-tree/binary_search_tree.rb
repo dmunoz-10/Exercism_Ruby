@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Binary Search Tree Class
 class Bst
   attr_reader :data, :left, :right

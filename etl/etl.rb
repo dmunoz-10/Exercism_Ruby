@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Etl Class
 class ETL
   def self.transform(old)

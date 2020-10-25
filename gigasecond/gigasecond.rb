@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Gigasecond Class
 class Gigasecond
   def self.from(time)

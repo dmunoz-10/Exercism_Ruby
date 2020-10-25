@@ -8,7 +8,3 @@ class SumOfMultiples
     ((1...number).find_all { |num| @numbers.any? { |x| (num % x).zero? } }).sum
   end
 end
-
-module BookKeeping
-  VERSION = 2
-end

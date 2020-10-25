@@ -6,6 +6,7 @@ class Nucleotide
 
   def self.from_dna(dna)
     raise ArgumentError if dna =~ /[^GCTA]/
+
     new(dna)
   end
 

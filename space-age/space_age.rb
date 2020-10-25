@@ -1,42 +1,40 @@
 # SpaceAge Class
 class SpaceAge
+  EARTH_ORBITAL_PERIOD = 31_557_600
+
   def initialize(seconds)
     @seconds = seconds.to_f
   end
 
   def on_earth
-    @seconds / 31_557_600
+    @seconds / EARTH_ORBITAL_PERIOD
   end
 
   def on_mercury
-    @seconds / (31_557_600 * 0.2408467)
+    @seconds / (EARTH_ORBITAL_PERIOD * 0.2408467)
   end
 
   def on_venus
-    @seconds / (31_557_600 * 0.61519726)
+    @seconds / (EARTH_ORBITAL_PERIOD * 0.61519726)
   end
 
   def on_mars
-    @seconds / (31_557_600 * 1.8808158)
+    @seconds / (EARTH_ORBITAL_PERIOD * 1.8808158)
   end
 
   def on_jupiter
-    @seconds / (31_557_600 * 11.862615)
+    @seconds / (EARTH_ORBITAL_PERIOD * 11.862615)
   end
 
   def on_saturn
-    @seconds / (31_557_600 * 29.447498)
+    @seconds / (EARTH_ORBITAL_PERIOD * 29.447498)
   end
 
   def on_uranus
-    @seconds / (31_557_600 * 84.016846)
+    @seconds / (EARTH_ORBITAL_PERIOD * 84.016846)
   end
 
   def on_neptune
-    @seconds / (31_557_600 * 164.79132)
+    @seconds / (EARTH_ORBITAL_PERIOD * 164.79132)
   end
-end
-
-module BookKeeping
-  VERSION = 1
 end
