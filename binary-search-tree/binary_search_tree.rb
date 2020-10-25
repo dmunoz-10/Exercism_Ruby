@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Binary Search Tree Class
 class Bst
   attr_reader :data, :left, :right
@@ -13,12 +15,9 @@ class Bst
 
   def each
     return to_enum(:each) { size } unless block_given?
-    @left.each { |x| yield(x) } if @left
-    yield @data
-    @right.each { |x| yield(x) } if @right
-  end
-end
 
-module BookKeeping
-  VERSION = 1
+    @left&.each { |x| yield(x) }
+    yield @data
+    @right&.each { |x| yield(x) }
+  end
 end

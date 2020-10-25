@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Anagram Class
 class Anagram
   def initialize(word)
@@ -9,8 +11,4 @@ class Anagram
       @word.chars.sort == x.downcase.chars.sort && !x.casecmp?(@word)
     end
   end
-end
-
-module BookKeeping
-  VERSION = 2
 end

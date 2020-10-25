@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Clock Class
 class Clock
   attr_reader :hour

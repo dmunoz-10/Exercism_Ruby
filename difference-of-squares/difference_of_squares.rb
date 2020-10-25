@@ -1,19 +1,24 @@
+# frozen_string_literal: true
+
 # Squares Class
 class Squares
-  attr_reader :square_of_sum
-  attr_reader :sum_of_squares
-  attr_reader :difference
   def initialize(number)
-    @square_of_sum = 0
-    @sum_of_squares = 0
-    @difference = 0
-    1.upto(number) { |x| @square_of_sum += x }
-    @square_of_sum **= 2
-    1.upto(number) { |x| @sum_of_squares += x**2 }
-    @difference = @square_of_sum - @sum_of_squares
+    @number = number
   end
-end
 
-module BookKeeping
-  VERSION = 4
+  def square_of_sum
+    return 1 if @number == 1
+
+    ((@number + 1.0) * @number / 2.0)**2.0
+  end
+
+  def sum_of_squares
+    return 1 if @number == 1
+
+    (@number**3.0 / 3.0) + (@number**2.0 / 2.0) + (@number / 6.0)
+  end
+
+  def difference
+    square_of_sum - sum_of_squares
+  end
 end
