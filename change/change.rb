@@ -1,16 +1,20 @@
 # Change Class
 class Change
-  def self.generate(coins, money)
-    return -1 if money < 0 || (money < coins.min && money > 0)
-    coins.sort { |a, z| z <=> a}.each_with_object([]) do |coin, temp|
-      while money >= coin
-        temp << coin
-        money -= coin
-      end
-    end.sort
-  end
-end
+  class ImpossibleCombinationError < ArgumentError; end
+  class NegativeTargetError < ArgumentError; end
 
-module BookKeeping
-  VERSION = 2
+  def self.generate(coins, money)
+    raise NegativeTargetError if money.negative?
+    return [] if money.zero?
+
+    1.upto(money) do |i|
+      valid_combination = coins.repeated_combination(i).find do |combination|
+        combination.sum == money
+      end
+
+      return valid_combination if valid_combination
+    end
+
+    raise ImpossibleCombinationError
+  end
 end
