@@ -1,8 +1,7 @@
-require 'set'
-
 # Robot Class
 class Robot
-  @@used_names = Set.new
+  @@names = ('AA000'..'ZZ999').to_a.shuffle
+
   attr_reader :name
 
   def initialize
@@ -10,15 +9,10 @@ class Robot
   end
 
   def reset
-    loop do
-      @name = ('A'..'Z').to_a.sample + ('A'..'Z').to_a.sample
-      @name += format('%03d', rand(0..1000))
-      unless @@used_names.include?(@name)
-        @@used_names << @name
-        return
-      end
-    end
+    @name = @@names.pop
   end
 
-  def self.forget; end
+  def self.forget
+    @@names = ('AA000'..'ZZ999').to_a.shuffle
+  end
 end
