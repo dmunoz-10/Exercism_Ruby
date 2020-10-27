@@ -5,28 +5,24 @@ class Triangle
   end
 
   def equilateral?
-    return false unless validate
-    @values.uniq.length == 1
+    valid? && @values.uniq.length == 1
   end
 
   def isosceles?
-    return false unless validate
-    @values.uniq.length < 3
+    valid? && @values.uniq.length < 3
   end
 
   def scalene?
-    return false unless validate
-    return false if @values[2] < @values[0] || @values[2] < @values[1]
-    @values.uniq.length == 3
+    valid? && @values.uniq.length == 3
   end
 
   def degenerate?
-    return false unless validate
-    (@values[0] + @values[1]) == @values[2]
+    valid? && (@values[0] + @values[1]) == @values[2]
   end
 
-  def validate
-    return false if @values.min <= 0
-    ((@values[0] + @values[1]) < @values[2]) == false
+  private
+
+  def valid?
+    @values.min.positive? && @values.max <= @values.sum - @values.max
   end
 end

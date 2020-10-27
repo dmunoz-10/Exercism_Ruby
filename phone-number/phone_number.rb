@@ -1,11 +1,9 @@
 # PhoneNumber Class
 class PhoneNumber
-  def self.clean (number)
-    aux = number.gsub(/\D/, '').gsub(/^1/,'')
-    return aux if('2'..'9') === aux[3] && aux.length == 10
-  end
-end
+  def self.clean(number)
+    aux = number.gsub(/\D/, '').gsub(/^1/, '')
+    return nil if (%w[0 1] & [aux[0], aux[3]]).any? || aux.length != 10
 
-module BookKeeping
-  VERSION = 2
+    aux
+  end
 end
