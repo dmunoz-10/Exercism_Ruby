@@ -5,7 +5,7 @@ class ResistorColorTrio
   def initialize(colors)
     raise ArgumentError if (colors - COLORS).any?
 
-    @colors = colors
+    @values = colors.map { |color| COLORS.index(color) }
   end
 
   def label
@@ -16,10 +16,7 @@ class ResistorColorTrio
   private
 
   def raw_value
-    @raw_value ||= begin
-      value = "#{COLORS.index(@colors[0])}#{COLORS.index(@colors[1])}".to_i
-      value * 10**COLORS.index(@colors[2])
-    end
+    @raw_value ||= "#{@values[0]}#{@values[1]}#{'0' * @values[2]}".to_i
   end
 
   def unity
