@@ -16,7 +16,7 @@ class ResistorColorTrio
   private
 
   def raw_value
-    @raw_value ||= "#{@values[0]}#{@values[1]}#{'0' * @values[2]}".to_i
+    @raw_value ||= ((@values[0] * 10) + @values[1]) * (10**@values[2])
   end
 
   def unity
