@@ -1,5 +1,8 @@
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 2.7
+  Exclude:
+    - '*_test.rb'
 
 Layout/LineLength:
   Max: 100
