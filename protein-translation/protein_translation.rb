@@ -1,4 +1,4 @@
-# Translation Class
+# Translation Module
 module Translation
   CODON_PROTEIN = {
     AUG: 'Methionine',
@@ -30,4 +30,5 @@ module Translation
   end
 end
 
+# InvalidCodonError Class
 class InvalidCodonError < StandardError; end
