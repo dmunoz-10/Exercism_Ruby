@@ -50,5 +50,5 @@ class CustomSet
   def union(other)
     CustomSet.new((data + other.data).uniq)
   end
-  alias + difference
+  alias + union
 end
