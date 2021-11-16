@@ -1,22 +1,21 @@
 # Luhn Class
 class Luhn
-  def self.valid?(numbers)
-    numbers.delete!(' ')
-    return if numbers =~ /\D/ || numbers.size <= 1
+  class << self
+    def valid?(numbers)
+      temp = numbers.delete(' ')
+      return unless temp =~ /^\d{2,}$/
 
-    (doubling_and_sum(numbers) % 10).zero?
-  end
-
-  private_class_method def self.doubling_and_sum(numbers)
-    sum = 0
-    numbers.to_i.digits.each_with_index do |number, index|
-      unless (index % 2).zero?
-        number *= 2
-        number -= 9 if number > 9
-      end
-      sum += number
+      doubling_and_sum(temp).modulo(10).zero?
     end
 
-    sum
+    private
+
+    def doubling_and_sum(numbers)
+      numbers.to_i.digits.each_slice(2).sum do |even, odd=0|
+        odd *= 2
+        odd -= 9 if odd > 9
+        even + odd
+      end
+    end
   end
 end
